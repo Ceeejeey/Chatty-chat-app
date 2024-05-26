@@ -74,7 +74,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name -gihanvimukthi19@gmail.com
+Email - gihanvimukthi19@gmail.com
+LinkedIn - www.linkedin.com/in/gihan-vimukthi
 
 Project Link: [(https://github.com/Ceeejeey/Chatty-chat-app.git)](https://github.com/Ceeejeey/Chatty-chat-app.git)
 
