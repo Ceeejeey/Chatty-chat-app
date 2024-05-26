@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="public/css/indexp.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+   
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    }
+
+#logo {
+    display:inline-block;
+    justify-content: left;
+    font-family: Forte regular;
+    color:rgb(217, 155, 237);
+    font-size: 200%;
+    border:none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 90%;
+    margin-bottom: 0;
+
+}
+
+/* for image sectiom 1 */
+
+.new-people{
+
+    display: flex;
+    background: #a6dbff;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.new-people img{
+    width: 50%;
+    height:50%
+}
+
+.new-people .text1{
+    font-size: x-large;
+    font-family: poppins;
+    padding: 30px 40px;
+    margin-top: 20%;
+}
+
+/* for image section 2*/
+
+.chat{
+    display:flex;
+    background: #fff;
+    justify-content: space-between;
+}
+
+.chat img{
+    width: 50%;
+    height: 50%;
+
+}
+
+.chat .text2{
+    font-size: x-large;
+    font-family: poppins;
+    padding:30px 40px;
+    margin-top: 20%;
+}
+
+/*for image section 3 */
+
+.thoughts{
+    display:flex;
+    background: #ffffff;
+    justify-content: space-between;
+}
+
+.thoughts img{
+    width:50%;
+    height: 50%;
+}
+
+.thoughts .text3{
+    font-size: x-large;
+    font-family: poppins;
+    padding:30px 40px;
+    margin-top: 20%;
+}
+
+/* for image section4*/
+
+.media{
+    display:flex;
+    background: #fbd5fd;
+    justify-content: space-between;
+    height: 700px;
+}
+
+.media img{
+    width:100%;
+    height: 100%;
+}
+
+.text4{
+    font-size: x-large;
+    font-family: poppins;
+    padding:40px 40px;
+    margin-top: 12%;
+}
+
+/* for page reveal*/
+
+.reveal{
+    position:relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 3s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* for footer*/
+
+footer {
+   
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000000; /* Adjust background color if needed */
+    overflow: auto;
+    padding: 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: #000000 0.5px solid;
+    z-index: 999; /* Ensure it's above other elements */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-end img {
+    width: 150px;
+    height: auto;
+}
+
+.navi {
+    text-align: center;
+}
+
+.foot a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.foot a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="background-color: #12a0ff;">
+            <div class="container-fluid">
+                      <a class="navbar-brand" href="#">
+                        <img src="/views/chatty-new.png" alt="Bootstrap" width="250" height="64">
+                      </a>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/" style="font-size: x-large; font-family: poppins;">Home</a></li>
+                <%if (status == "loggedIn" ){%>
+                  <li class="nav-item"><a class="nav-link "  href="/public/MainProfile.html" style="font-size: x-large; font-family: poppins;">Profile</a></li>
+                  <li class="nav-item"><a class="nav-link"  href="/logout" style="font-size: x-large; font-family: poppins;">Logout</a></li>
+                <%}else{%>
+                  <li class="nav-item"><a class="nav-link "  href="/public/login.html" style="font-size: x-large; font-family: poppins;">Login</a></li>
+                  <li class="nav-item"><a class="nav-link " href="/public/signup.html" style="font-size: x-large; font-family: poppins;">Signup</a></li>
+                <%}%>   
+                  
+                </ul>
+            <form class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+              </form>
+              </div>
+              </div>
+        </nav> 
+    </header>
+   
+    <main>
+        <section>
+            <div class="contain">
+            <div class="new-people">
+                <div class="text1">
+                    <%if (status == "loggedIn" ){%>
+                        <h2><b>Welcome <%= user.username %></h2></b>
+                    <%}%>
+                    <script>console.log(status)</script>
+                    <h2><b>Meet New Friends</h2></b>
+                    <br>
+                    <p>Chatty enables you to meet new friends and connect with them</p>
+                </div>
+                <img src="/views/new people-Photoroom.png-Photoroom.png" alt="">
+                
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="contain reveal">
+            <div class="chat">
+                <img src="/views/chat-Photoroom.png-Photoroom.png" alt="">
+                <div class="text2">
+                    <h2><b>Chat with them</h2></b>
+                    <br>
+                    <p>You can chat with your friends.if you wanna group chat..<br>create a group with them</p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="contain reveal">
+            <div class="media">
+                <div class="text4">
+                    <h2><b>Media Sharing</h2></b>
+                    <br>
+                    <p>Found some nice song or captured awesome photo ? <br>why are you waiting share with your friends</p>
+                </div>
+                <img src="/views/sharing media-Photoroom.png-Photoroom.png" alt="">
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="contain reveal">
+            <div class="thoughts">
+                <img src="/views/thoughts-Photoroom.png-Photoroom.png" alt="">
+                <div class="text3">
+                    <h2><b>Share your thoughts</h2></b>
+                    <br>
+                    <p>How was the day..? share your thoughts..you can share post on the timeline</p>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>    
+        
+        <div class="logo-end"><a href="#"><img src="/views/Chatty1.png" alt=""></a>
+        </div>
+        <footer>
+            
+            <div class="navi">
+            <nav class="foot">
+                <a href="#">About Us | </a>
+                <a href="#"> Contact Us | </a>
+                <a href="#"> Privacy</a>
+
+            </nav>
+        </div>
+        </footer>
+
+    <script src="/public/js/indexp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

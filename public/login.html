@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Login page</title>
+    <style>
+        body{
+            background-color: #c3dffe;
+        }
+
+    .navbar {
+        
+    background-color: #12a0ff;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px; /* Adjust margin-top to make space for navbar */
+}
+
+section{
+    display:flex;
+}
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"  style="background-color: #12a0ff;">
+        <div class="container-fluid">
+                  <a class="navbar-brand" href="/">
+                    <img src="/views/chatty-new.png" alt="Bootstrap" width="250" height="64">
+                  </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/" style="font-size: x-large; font-family: poppins;">Home</a></li>
+              <li class="nav-item">
+                <a class="nav-link "  href="/public/login.html" style="font-size: x-large; font-family: poppins;">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/public/signup.html" style="font-size: x-large; font-family: poppins;">Signup</a>
+              </li>
+        </ul>
+        <form class="d-flex ms-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+          </form>
+          </div>
+          </div>
+    </nav> 
+    <section>
+        <div class="cont">
+                <form onsubmit="return false;" id="form">
+                    <h2>Login</h2>
+                    <div class="input-box">
+                        <input type="text" placeholder="email" id="email" required>
+                        
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" id="password"required>
+                        
+                    </div>
+                    <div class="remember-forgot">
+                        <div class="check">
+                        <input type="checkbox"> <label>Remember me </label>
+                        </div>  
+                            <a href="#">Forgot Password?</a>
+                        
+                    </div>
+                    <div class="alert alert-danger" role="alert" id="error" style="display: none"></div>
+                    <div class="alert alert-success" role="alert" id="success" style="display: none"></div>
+                    <button type="submit" class="btn">Login</button>
+
+                    <div class="register-link">
+                        <p>Don't have an account? <a href="./signup.html">Signup</a></p>
+                    </div>
+                </form>
+
+        </div> 
+    
+
+    <img src="./Chatty (1).png" alt="" id="logo">
+    <h1 id="slogan"></h1>
+</section>
+    <script src="/public/js/login.js"></script>
+</body>
+</html>
